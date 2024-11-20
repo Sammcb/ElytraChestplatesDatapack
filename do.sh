@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=1.0.0
+VERSION=1.0.1
 MINECRAFT_VERSION=1.21.3
 
 ZIP_NAME="elytra-chestplates-${VERSION}-${MINECRAFT_VERSION}.zip"
