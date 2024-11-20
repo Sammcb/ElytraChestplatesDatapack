@@ -1,4 +1,4 @@
-name: Zip
+name: Build
 on:
   release:
     types: [published]
@@ -6,7 +6,7 @@ on:
   workflow_dispatch: null
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: ubuntu-24.04
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -16,4 +16,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ElytraChestplates
-        path: "*.zip"
+        path: build/*.zip

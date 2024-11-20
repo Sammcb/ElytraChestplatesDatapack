@@ -1,0 +1,25 @@
+name: Lint
+on:
+  release:
+    types: [published]
+  pull_request: null
+  workflow_dispatch: null
+jobs:
+  shell:
+    runs-on: ubuntu-24.04
+    container: koalaman/shellcheck:v0.10.0
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Lint
+      run: shellcheck do.sh
+  json:
+    runs-on: ubuntu-24.04
+    container: node:23.2.0-alpine3.20
+    steps:
+    - name: Install linter
+      run: npm install ajv-cli@5.0.0
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Lint
+      run: ajv validate datapack/pack.mcmeta
