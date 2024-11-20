@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:smithing_transform",
+	"addition": "minecraft:elytra",
+	"base": "minecraft:golden_chestplate",
+	"result": {
+		"count": 1,
+		"id": "minecraft:golden_chestplate",
+		"components": {
+			"minecraft:lore": [
+				"{'text': 'Elytra:', 'italic': false, 'color': 'gray'}",
+				"{'text': ' Equipped', 'italic': false, 'color': 'light_purple'}"
+			],
+			"minecraft:glider": {},
+			"minecraft:item_model": "elytrachestplates:elytra_golden_chestplate",
+			"minecraft:equippable": {
+				"slot": "chest",
+				"equip_sound": "item.armor.equip_gold",
+				"model": "elytrachestplates:elytra_golden_chestplate"
+			}
+		}
+	},
+	"template": "minecraft:phantom_membrane"
+}
