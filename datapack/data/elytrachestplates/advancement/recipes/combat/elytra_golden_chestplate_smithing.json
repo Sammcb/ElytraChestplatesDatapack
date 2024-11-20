@@ -1,0 +1,27 @@
+{
+	"parent": "elytrachestplates:recipes/root",
+	"criteria": {
+		"has_elytra": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:elytra"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "elytrachestplates:elytra_golden_chestplate_smithing"
+			}
+		}
+	},
+	"requirements": [
+		["has_the_recipe", "has_elytra"]
+	],
+	"rewards": {
+		"recipes": ["elytrachestplates:elytra_golden_chestplate_smithing"]
+	}
+}

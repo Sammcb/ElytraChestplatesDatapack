@@ -1,0 +1,36 @@
+{
+	"parent": "minecraft:end/elytra",
+	"criteria": {
+		"has_elytra_chestplate": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "#minecraft:chest_armor",
+						"components": {
+							"minecraft:glider": {}
+						}
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"title": {
+			"translate": "advancements.end.elytra_chestplate.title"
+		},
+		"description": {
+			"translate": "advancements.end.elytra_chestplate.description"
+		},
+		"frame": "challenge",
+		"icon": {
+			"id": "minecraft:diamond_chestplate",
+			"components": {
+				"minecraft:item_model": "elytrachestplates:elytra_diamond_chestplate"
+			}
+		}
+	},
+	"requirements": [
+		["has_elytra_chestplate"]
+	]
+}
