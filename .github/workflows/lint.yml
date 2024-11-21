@@ -18,7 +18,7 @@ jobs:
     container: alpine:3.20.3
     steps:
     - name: Install dependencies
-      run: apk update && apk add --no-cache jq=1.7.1
+      run: apk update && apk add --no-cache jq=1.7.1-r0
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Lint
