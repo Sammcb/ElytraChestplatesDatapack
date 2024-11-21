@@ -8,7 +8,7 @@ RESOURCEPACK_ZIP_NAME="Elytra Chestplates ${VERSION} ${MINECRAFT_VERSION}.zip"
 BUILD_DIRECTORY="build"
 
 print_info() {
-	printf "\e[1;35m$1\e[0m - \e[0;37m$2\e[0m\n"
+	printf "\e[1;35m%s\e[0m - \e[0;37m%s\e[0m\n" "$1" "$2"
 }
 
 help() {
@@ -18,16 +18,16 @@ help() {
 }
 
 build() {
-	local datapack_root_directory="datapack"
-	local resourcepack_root_directory="resourcepack"
 	clean
 	mkdir ${BUILD_DIRECTORY}
-	cd ${datapack_root_directory}
-	zip -q -r "../${BUILD_DIRECTORY}/${DATAPACK_ZIP_NAME}" data pack.mcmeta pack.png
-	cd ..
-	cd ${resourcepack_root_directory}
-	zip -q -r "../${BUILD_DIRECTORY}/${RESOURCEPACK_ZIP_NAME}" assets pack.mcmeta pack.png
-	cd ..
+	(
+		cd datapack || exit
+		zip -q -r "../${BUILD_DIRECTORY}/${DATAPACK_ZIP_NAME}" data pack.mcmeta pack.png
+	)
+	(
+		cd resourcepack || exit
+		zip -q -r "../${BUILD_DIRECTORY}/${RESOURCEPACK_ZIP_NAME}" assets pack.mcmeta pack.png
+	)
 }
 
 clean() {

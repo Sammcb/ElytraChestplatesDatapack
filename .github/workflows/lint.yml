@@ -15,11 +15,9 @@ jobs:
       run: shellcheck do.sh
   json:
     runs-on: ubuntu-24.04
-    container: node:23.2.0-alpine3.20
+    container: ghcr.io/jqlang/jq:1.7.1
     steps:
-    - name: Install linter
-      run: npm install -g ajv-cli@5.0.0
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Lint
-      run: ajv validate datapack/pack.mcmeta
+      run: cat datapack/pack.mcmeta | jq type 1>/dev/null
