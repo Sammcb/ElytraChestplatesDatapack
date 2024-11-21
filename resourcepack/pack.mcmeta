@@ -1,0 +1,7 @@
+{
+	"pack": {
+		"description": "Displays elytra and chestplate when using Elytra Chestplates datapack.",
+		"pack_format": 42,
+		"supported_formats": [42]
+	}
+}
