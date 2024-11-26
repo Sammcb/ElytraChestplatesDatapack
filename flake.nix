@@ -1,5 +1,5 @@
 {
-	description = "Elytra chestplates datapack";
+	description = "Elytra chestplates datapack and resourcepack";
 
 	inputs = {
 		# Commit does not correspond to a tag.
@@ -7,8 +7,8 @@
 		nixpkgs.url = "github:NixOS/nixpkgs/8edf06bea5bcbee082df1b7369ff973b91618b8d";
 		# Commit does not correspond to a tag.
 		flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
-		# Commit corresponds to tag v0.2.0.
 		flake-checker = {
+			# Commit corresponds to tag v0.2.0.
 			url = "github:DeterminateSystems/flake-checker/6ba8ec538e8b959957932c3416ea9384b7cef170";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
@@ -38,10 +38,10 @@
 				];
 			};
 
-			flakeChecker = flake-checker.packages.${system}.default;
+			flakeCheckerPackage = flake-checker.packages.${system}.default;
 		in {
 			devShells.default = pkgs.mkShell {
-				nativeBuildInputs = [flakeChecker] ++ (with pkgs; [zip editorconfig-checker codespell]);
+				nativeBuildInputs = [flakeCheckerPackage] ++ (with pkgs; [zip editorconfig-checker codespell]);
 			};
 
 			checks = {
@@ -73,7 +73,7 @@
 				# 	src = self;
 				# 	dontBuild = true;
 				# 	doCheck = true;
-				# 	nativeBuildInputs = [flakeChecker];
+				# 	nativeBuildInputs = [flakeCheckerPackage];
 				# 	checkPhase = "flake-checker --no-telemetry";
 				# 	installPhase = "touch $out";
 				# };
