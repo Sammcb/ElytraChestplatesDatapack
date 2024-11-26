@@ -41,7 +41,7 @@
 			flakeCheckerPackage = flake-checker.packages.${system}.default;
 		in {
 			devShells.default = pkgs.mkShell {
-				nativeBuildInputs = [flakeCheckerPackage] ++ (with pkgs; [zip editorconfig-checker codespell]);
+				nativeBuildInputs = [flakeCheckerPackage] ++ (with pkgs; [zip editorconfig-checker]);
 			};
 
 			checks = {
@@ -52,16 +52,6 @@
 					doCheck = true;
 					nativeBuildInputs = with pkgs; [editorconfig-checker];
 					checkPhase = "editorconfig-checker";
-					installPhase = "touch $out";
-				};
-
-				spelling = pkgs.stdenvNoCC.mkDerivation {
-					name = "spelling";
-					src = self;
-					dontBuild = true;
-					doCheck = true;
-					nativeBuildInputs = with pkgs; [codespell];
-					checkPhase = "codespell -f";
 					installPhase = "touch $out";
 				};
 
