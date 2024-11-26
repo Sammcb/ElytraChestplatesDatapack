@@ -27,8 +27,6 @@ jobs:
     - name: Check flake
       uses: DeterminateSystems/flake-checker-action@v9
       with:
-        # Commit corresponds to tag v0.2.0.
-        source-revision: 6ba8ec538e8b959957932c3416ea9384b7cef170
         # Disable telemetry.
         send-statistics: false
         ignore-missing-flake-lock: false

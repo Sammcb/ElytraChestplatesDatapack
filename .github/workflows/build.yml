@@ -20,15 +20,13 @@ jobs:
     - name: Setup cache
       uses: DeterminateSystems/magic-nix-cache-action@v8
       with:
-        # Commit corresponds to tag v0.1.3.
-        source-revision: fbf0bbed9401ae4069096a6025bb624f20cd4f4c
+        # Commit does not correspond to a tag.
+        source-revision: 296e9dc1af825f2c961c1caa61832609b1bf8a49
         # Disable telemetry.
         diagnostic-endpoint: ""
     - name: Check flake
       uses: DeterminateSystems/flake-checker-action@v9
       with:
-        # Commit corresponds to tag v0.2.0.
-        source-revision: 6ba8ec538e8b959957932c3416ea9384b7cef170
         # Disable telemetry.
         send-statistics: false
         ignore-missing-flake-lock: false

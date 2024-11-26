@@ -12,19 +12,9 @@
 			url = "github:DeterminateSystems/flake-checker/6ba8ec538e8b959957932c3416ea9384b7cef170";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
-		cleanCommand = {
-			url = "path:./commands/clean.sh";
-			flake = false;
-		};
-
-		buildCommand = {
-			url = "path:./commands/build.sh";
-			flake = false;
-		};
 	};
 
-	outputs = {self, nixpkgs, flake-utils, flake-checker, cleanCommand, buildCommand}: flake-utils.lib.eachDefaultSystem (system:
+	outputs = {self, nixpkgs, flake-utils, flake-checker}: flake-utils.lib.eachDefaultSystem (system:
 		let
 			pkgs = import nixpkgs {inherit system;};
 			lib = pkgs.lib;
@@ -44,7 +34,7 @@
 					"resourcepack_name='${resourcepackName}'"
 					"version='${version}'"
 					"minecraft_version='${minecraftVersion}'"
-					"${builtins.readFile buildCommand}"
+					"${builtins.readFile ./commands/build.sh}"
 				];
 			};
 
@@ -100,7 +90,7 @@
 						runtimeInputs = [];
 						text = lib.strings.concatStringsSep "\n" [
 							"build_directory='${buildDirectory}'"
-							"${builtins.readFile cleanCommand}"
+							"${builtins.readFile ./commands/clean.sh}"
 						];
 					}
 				);

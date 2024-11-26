@@ -1,31 +1,5 @@
 {
   "nodes": {
-    "buildCommand": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-55MiC1NcCGaaPgrD1wYIW9Yg5wtdua/9MvXNv8cqMHE=",
-        "path": "./commands/build.sh",
-        "type": "path"
-      },
-      "original": {
-        "path": "./commands/build.sh",
-        "type": "path"
-      }
-    },
-    "cleanCommand": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-HU5g0JfStyXbVOmxNC9MuTCwHsxClZRSMWiWowTOX4w=",
-        "path": "./commands/clean.sh",
-        "type": "path"
-      },
-      "original": {
-        "path": "./commands/clean.sh",
-        "type": "path"
-      }
-    },
     "crane": {
       "inputs": {
         "nixpkgs": [
@@ -121,8 +95,6 @@
     },
     "root": {
       "inputs": {
-        "buildCommand": "buildCommand",
-        "cleanCommand": "cleanCommand",
         "flake-checker": "flake-checker",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
