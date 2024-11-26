@@ -38,3 +38,5 @@ jobs:
       with:
         name: ElytraChestplates
         path: .build/*.zip
+        include-hidden-files: true
+        if-no-files-found: error
