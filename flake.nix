@@ -65,7 +65,10 @@
 					installPhase = "touch $out";
 				};
 
-				flake = pkgs.stdenvNoCC.mkDerivation {
+				# This takes a long time to install in a runner
+				# Disabling till nix hopefully allows running individual checks
+
+				flake = pkgs.stdenv.mkDerivation {
 					name = "flake-checker";
 					src = self;
 					dontBuild = true;
