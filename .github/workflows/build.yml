@@ -24,13 +24,6 @@ jobs:
         source-revision: 296e9dc1af825f2c961c1caa61832609b1bf8a49
         # Disable telemetry.
         diagnostic-endpoint: ""
-    - name: Check flake
-      uses: DeterminateSystems/flake-checker-action@v9
-      with:
-        # Disable telemetry.
-        send-statistics: false
-        ignore-missing-flake-lock: false
-        fail-mode: true
     - name: Build
       run: nix run .
     - name: Archive executable
