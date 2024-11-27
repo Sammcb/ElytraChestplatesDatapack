@@ -1,0 +1,145 @@
+{
+	"parent": "minecraft:item/generated",
+	"overrides": [
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_quartz_trim",
+			"predicate": {
+				"trim_type": 0.1,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_quartz_trim",
+			"predicate": {
+				"trim_type": 0.1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_iron_trim",
+			"predicate": {
+				"trim_type": 0.2,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_iron_trim",
+			"predicate": {
+				"trim_type": 0.2
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_netherite_trim",
+			"predicate": {
+				"trim_type": 0.3,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_netherite_trim",
+			"predicate": {
+				"trim_type": 0.3
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_redstone_trim",
+			"predicate": {
+				"trim_type": 0.4,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_redstone_trim",
+			"predicate": {
+				"trim_type": 0.4
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_copper_trim",
+			"predicate": {
+				"trim_type": 0.5,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_copper_trim",
+			"predicate": {
+				"trim_type": 0.5
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_gold_trim",
+			"predicate": {
+				"trim_type": 0.6,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_gold_trim",
+			"predicate": {
+				"trim_type": 0.6
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_emerald_trim",
+			"predicate": {
+				"trim_type": 0.7,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_emerald_trim",
+			"predicate": {
+				"trim_type": 0.7
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_diamond_trim",
+			"predicate": {
+				"trim_type": 0.8,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_diamond_trim",
+			"predicate": {
+				"trim_type": 0.8
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_lapis_trim",
+			"predicate": {
+				"trim_type": 0.9,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_lapis_trim",
+			"predicate": {
+				"trim_type": 0.9
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate_amethyst_trim",
+			"predicate": {
+				"trim_type": 1.0,
+				"broken": 1
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_chainmail_chestplate_amethyst_trim",
+			"predicate": {
+				"trim_type": 1.0
+			}
+		},
+		{
+			"model": "elytrachestplates:item/elytra_broken_chainmail_chestplate",
+			"predicate": {
+				"broken": 1
+			}
+		}
+	],
+	"textures": {
+		"layer0": "minecraft:item/chainmail_chestplate",
+		"layer1": "elytrachestplates:item/chestplate_elytra"
+	}
+}

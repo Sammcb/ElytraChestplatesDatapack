@@ -1,11 +1,11 @@
-name: Build
+name: Lint
 on:
   release:
     types: [published]
   pull_request: null
   workflow_dispatch: null
 jobs:
-  build:
+  checks:
     runs-on: ubuntu-24.04
     steps:
     - name: Harden runner
@@ -17,7 +17,9 @@ jobs:
           api.github.com:443
           cache.nixos.org:443
           install.determinate.systems:443
+          api.flakehub.com:443
           *.s3.dualstack.us-east-2.amazonaws.com:443
+          *.cloudfront.net:443
     - name: Checkout repository
       uses: actions/checkout@v4.2.2
     - name: Install nix
@@ -34,12 +36,12 @@ jobs:
         source-revision: 296e9dc1af825f2c961c1caa61832609b1bf8a49
         # Disable telemetry.
         diagnostic-endpoint: ""
-    - name: Build
-      run: nix run .
-    - name: Archive executable
-      uses: actions/upload-artifact@v4.4.3
+    - name: Check flake
+      uses: DeterminateSystems/flake-checker-action@v9
       with:
-        name: ElytraChestplates
-        path: .build/*.zip
-        include-hidden-files: true
-        if-no-files-found: error
+        # Disable telemetry.
+        send-statistics: false
+        ignore-missing-flake-lock: false
+        fail-mode: true
+    - name: Check
+      run: nix flake check -L
