@@ -17,7 +17,7 @@ jobs:
           api.github.com:443
           cache.nixos.org:443
           install.determinate.systems:443
-          *.s3.dualstack.*.amazonaws.com:443
+          *.s3.dualstack.us-east-2.amazonaws.com:443
     - name: Checkout repository
       uses: actions/checkout@v4.2.2
     - name: Install nix
