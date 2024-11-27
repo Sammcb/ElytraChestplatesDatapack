@@ -18,9 +18,7 @@ jobs:
           cache.nixos.org:443
           install.determinate.systems:443
           api.flakehub.com:443
-          nix-installer*.s3.dualstack.*.amazonaws.com:443
-          magic-nix-cache*.s3.dualstack.*.amazonaws.com:443
-          flake-checker*.s3.dualstack.*.amazonaws.com:443
+          *.s3.dualstack.*.amazonaws.com:443
           *.cloudfront.net:443
     - name: Checkout repository
       uses: actions/checkout@v4.2.2
