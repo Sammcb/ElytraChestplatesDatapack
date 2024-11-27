@@ -9,7 +9,11 @@ jobs:
     - name: Harden runner
       uses: step-security/harden-runner@v2.10.2
       with:
-        egress-policy: audit
+        egress-policy: block
+        allowed-endpoints: >
+          github.com:443
+          api.github.com:443
+          api.securityscorecards.dev:443
     - name: Checkout Repository
       uses: actions/checkout@v4.2.2
     - name: Dependency Review

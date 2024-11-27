@@ -11,7 +11,17 @@ jobs:
     - name: Harden runner
       uses: step-security/harden-runner@v2.10.2
       with:
-        egress-policy: audit
+        egress-policy: block
+        allowed-endpoints: >
+          github.com:443
+          api.github.com:443
+          cache.nixos.org:443
+          install.determinate.systems:443
+          api.flakehub.com:443
+          nix-installer*.s3.dualstack.*.amazonaws.com:443
+          magic-nix-cache*.s3.dualstack.*.amazonaws.com:443
+          flake-checker*.s3.dualstack.*.amazonaws.com:443
+          *.cloudfront.net:443
     - name: Checkout repository
       uses: actions/checkout@v4.2.2
     - name: Install nix
