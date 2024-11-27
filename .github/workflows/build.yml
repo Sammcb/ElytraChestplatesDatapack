@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
+    - name: Harden runner
+      uses: step-security/harden-runner@v2.10.2
+      with:
+        egress-policy: audit
     - name: Checkout repository
       uses: actions/checkout@v4.2.2
     - name: Install nix
