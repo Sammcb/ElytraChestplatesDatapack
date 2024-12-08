@@ -15,7 +15,7 @@
 			"minecraft:equippable": {
 				"slot": "chest",
 				"equip_sound": "item.armor.equip_gold",
-				"model": "elytrachestplates:elytra_golden_chestplate"
+				"asset_id": "elytrachestplates:elytra_golden_chestplate"
 			}
 		}
 	},

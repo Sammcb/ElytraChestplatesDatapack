@@ -15,7 +15,7 @@
 			"minecraft:equippable": {
 				"slot": "chest",
 				"equip_sound": "item.armor.equip_netherite",
-				"model": "elytrachestplates:elytra_netherite_chestplate"
+				"asset_id": "elytrachestplates:elytra_netherite_chestplate"
 			}
 		}
 	},

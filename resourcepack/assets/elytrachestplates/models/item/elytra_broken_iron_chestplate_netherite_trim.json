@@ -1,8 +1,0 @@
-{
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "minecraft:item/iron_chestplate",
-		"layer1": "minecraft:trims/items/chestplate_trim_netherite",
-		"layer2": "elytrachestplates:item/chestplate_elytra_broken"
-	}
-}

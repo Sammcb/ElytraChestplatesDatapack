@@ -22,8 +22,8 @@
 			buildDirectory = ".build";
 			datapackName = "elytra-chestplates";
 			resourcepackName = "Elytra Chestplates";
-			version = "1.0.2";
-			minecraftVersion = "1.21.3";
+			version = "1.1.0";
+			minecraftVersion = "1.21.4";
 
 			buildScript = pkgs.writeShellApplication {
 				name = "build";
