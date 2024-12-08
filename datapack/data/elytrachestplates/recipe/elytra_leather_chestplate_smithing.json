@@ -15,7 +15,7 @@
 			"minecraft:equippable": {
 				"slot": "chest",
 				"equip_sound": "item.armor.equip_leather",
-				"model": "elytrachestplates:elytra_leather_chestplate"
+				"asset_id": "elytrachestplates:elytra_leather_chestplate"
 			}
 		}
 	},
