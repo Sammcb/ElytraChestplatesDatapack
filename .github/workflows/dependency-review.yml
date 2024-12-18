@@ -16,5 +16,7 @@ jobs:
           api.securityscorecards.dev:443
     - name: Checkout Repository
       uses: actions/checkout@v4.2.2
+      with:
+        persist-credentials: false
     - name: Dependency Review
       uses: actions/dependency-review-action@v4.5.0

@@ -27,7 +27,7 @@
 
 			buildScript = pkgs.writeShellApplication {
 				name = "build";
-				runtimeInputs = [];
+				runtimeInputs = with pkgs; [zip];
 				text = lib.strings.concatStringsSep "\n" [
 					"build_directory='${buildDirectory}'"
 					"datapack_name='${datapackName}'"
@@ -41,7 +41,11 @@
 			flakeCheckerPackage = flake-checker.packages.${system}.default;
 		in {
 			devShells.default = pkgs.mkShell {
-				nativeBuildInputs = [flakeCheckerPackage] ++ (with pkgs; [zip editorconfig-checker]);
+				nativeBuildInputs = [flakeCheckerPackage] ++ (with pkgs; [zip editorconfig-checker zizmor]);
+			};
+
+			devShells.zizmor = pkgs.mkShell {
+				nativeBuildInputs = with pkgs; [zizmor];
 			};
 
 			checks = {
@@ -52,6 +56,16 @@
 					doCheck = true;
 					nativeBuildInputs = with pkgs; [editorconfig-checker];
 					checkPhase = "editorconfig-checker";
+					installPhase = "touch $out";
+				};
+
+				zizmor = pkgs.stdenvNoCC.mkDerivation {
+					name = "zizmor";
+					src = self;
+					dontBuild = true;
+					doCheck = true;
+					nativeBuildInputs = with pkgs; [zizmor];
+					checkPhase = "zizmor -n .";
 					installPhase = "touch $out";
 				};
 
