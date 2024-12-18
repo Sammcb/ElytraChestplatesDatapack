@@ -20,6 +20,8 @@ jobs:
           *.s3.dualstack.us-east-2.amazonaws.com:443
     - name: Checkout repository
       uses: actions/checkout@v4.2.2
+      with:
+        persist-credentials: false
     - name: Install nix
       uses: DeterminateSystems/nix-installer-action@v16
       with:
