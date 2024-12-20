@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:elytra",
+	"addition": "#elytrachestplates:addition",
 	"base": "minecraft:netherite_chestplate",
 	"result": {
 		"count": 1,
@@ -19,5 +19,5 @@
 			}
 		}
 	},
-	"template": "minecraft:phantom_membrane"
+	"template": "#elytrachestplates:template"
 }
