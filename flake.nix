@@ -4,12 +4,12 @@
 	inputs = {
 		# Commit does not correspond to a tag.
 		# Updating to latest commit generally follows unstable branch.
-		nixpkgs.url = "github:NixOS/nixpkgs/8edf06bea5bcbee082df1b7369ff973b91618b8d";
+		nixpkgs.url = "github:NixOS/nixpkgs/0e2d2f87f0f61065ee6ccb979a1213691e74dbac";
 		# Commit does not correspond to a tag.
 		flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
 		flake-checker = {
-			# Commit corresponds to tag v0.2.0.
-			url = "github:DeterminateSystems/flake-checker/6ba8ec538e8b959957932c3416ea9384b7cef170";
+			# Commit corresponds to tag v0.2.3.
+			url = "github:DeterminateSystems/flake-checker/ca7cfb3bb7cc7d758a4ed0766a16e5e3ae7b6762";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
@@ -65,7 +65,7 @@
 					dontBuild = true;
 					doCheck = true;
 					nativeBuildInputs = with pkgs; [zizmor];
-					checkPhase = "zizmor -n .";
+					checkPhase = "zizmor -q .";
 					installPhase = "touch $out";
 				};
 
