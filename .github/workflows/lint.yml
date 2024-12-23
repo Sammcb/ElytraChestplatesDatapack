@@ -23,6 +23,7 @@ jobs:
           api.flakehub.com:443
           static.rust-lang.org:443
           static.crates.io:443
+          crates.io:443
           *.s3.dualstack.us-east-2.amazonaws.com:443
           *.cloudfront.net:443
     - name: Checkout repository
