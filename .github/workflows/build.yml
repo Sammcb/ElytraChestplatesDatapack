@@ -39,7 +39,7 @@ jobs:
     - name: Build
       run: nix run .
     - name: Archive executable
-      uses: actions/upload-artifact@v4.5.0
+      uses: actions/upload-artifact@v4.6.0
       with:
         name: ElytraChestplates
         path: .build/*.zip
