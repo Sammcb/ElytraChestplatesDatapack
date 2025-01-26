@@ -4,6 +4,7 @@ on:
     types: [published]
   pull_request: null
   workflow_dispatch: null
+permissions: {}
 jobs:
   checks:
     runs-on: ubuntu-24.04
