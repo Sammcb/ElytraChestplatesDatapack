@@ -30,17 +30,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1733522564,
-        "narHash": "sha256-kWjq25+VKL4ANqFG5UyVv/TqO2i5q400mqaUVbKg4GE=",
+        "lastModified": 1736892386,
+        "narHash": "sha256-K5E1sarWIUl4QavHBoS8sPr5Cp8ZndWjLYDLm++d7v0=",
         "owner": "DeterminateSystems",
         "repo": "flake-checker",
-        "rev": "ca7cfb3bb7cc7d758a4ed0766a16e5e3ae7b6762",
+        "rev": "93ec61a573f9980b480f514132073233bf8eceb9",
         "type": "github"
       },
       "original": {
         "owner": "DeterminateSystems",
         "repo": "flake-checker",
-        "rev": "ca7cfb3bb7cc7d758a4ed0766a16e5e3ae7b6762",
+        "rev": "93ec61a573f9980b480f514132073233bf8eceb9",
         "type": "github"
       }
     },
@@ -65,7 +65,10 @@
     },
     "naersk": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "flake-checker",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1733346208,
@@ -82,31 +85,17 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1734820311,
-        "narHash": "sha256-YsLK4ZiGY5CZmmgzsfU76OHVUTDeZJgirKzNO+et0UQ=",
+        "lastModified": 1737910147,
+        "narHash": "sha256-SWzM+0LHLlu9h8HhWYYreFc1iFSbIz9Ec/uegy0enJo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7e4a1594489d41bf8e16046b28e14a0e264c9baa",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1734962423,
-        "narHash": "sha256-ktdIsDWuLwLR5tP7NGJsr5Myq7nb4jyO2g/S0Ti94ZU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0e2d2f87f0f61065ee6ccb979a1213691e74dbac",
+        "rev": "a0da48df91297826a098cdc6b42e4eeec4395888",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0e2d2f87f0f61065ee6ccb979a1213691e74dbac",
+        "rev": "a0da48df91297826a098cdc6b42e4eeec4395888",
         "type": "github"
       }
     },
@@ -114,7 +103,7 @@
       "inputs": {
         "flake-checker": "flake-checker",
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       }
     },
     "rust-analyzer-src": {
