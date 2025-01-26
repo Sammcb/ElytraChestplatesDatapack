@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - name: Harden runner
-      uses: step-security/harden-runner@v2.10.2
+      uses: step-security/harden-runner@v2.10.4
       with:
         egress-policy: block
         allowed-endpoints: >
@@ -40,7 +40,7 @@ jobs:
     - name: Build
       run: nix run .
     - name: Archive executable
-      uses: actions/upload-artifact@v4.4.3
+      uses: actions/upload-artifact@v4.6.0
       with:
         name: ElytraChestplates
         path: .build/*.zip

@@ -12,7 +12,7 @@ jobs:
       security-events: write
     steps:
     - name: Harden runner
-      uses: step-security/harden-runner@v2.10.2
+      uses: step-security/harden-runner@v2.10.4
       with:
         egress-policy: block
         allowed-endpoints: >
@@ -59,7 +59,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload workflow report
-      uses: github/codeql-action/upload-sarif@v3.27.9
+      uses: github/codeql-action/upload-sarif@v3.28.1
       with:
         sarif_file: workflow_results.sarif
         category: zizmor
