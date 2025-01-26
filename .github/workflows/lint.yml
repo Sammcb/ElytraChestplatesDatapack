@@ -39,7 +39,7 @@ jobs:
         # Disable telemetry.
         diagnostic-endpoint: ""
     - name: Setup cache
-      uses: DeterminateSystems/magic-nix-cache-action@v8
+      uses: DeterminateSystems/magic-nix-cache-action@v9
       with:
         # Commit does not correspond to a tag.
         source-revision: 296e9dc1af825f2c961c1caa61832609b1bf8a49
@@ -59,7 +59,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload workflow report
-      uses: github/codeql-action/upload-sarif@v3.28.1
+      uses: github/codeql-action/upload-sarif@v3.28.5
       with:
         sarif_file: workflow_results.sarif
         category: zizmor
