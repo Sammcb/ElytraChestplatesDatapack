@@ -38,13 +38,6 @@ jobs:
         source-revision: b4bc792f575248e63e92c95cd9d334d01ba86b71
         # Disable telemetry.
         diagnostic-endpoint: ""
-    - name: Setup cache
-      uses: DeterminateSystems/magic-nix-cache-action@v9
-      with:
-        # Commit does not correspond to a tag.
-        source-revision: 296e9dc1af825f2c961c1caa61832609b1bf8a49
-        # Disable telemetry.
-        diagnostic-endpoint: ""
     - name: Check flake
       uses: DeterminateSystems/flake-checker-action@v9
       with:
