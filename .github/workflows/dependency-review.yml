@@ -3,7 +3,7 @@ on: [pull_request]
 permissions: {}
 jobs:
   dependency-review:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     permissions:
       contents: read
     steps:
