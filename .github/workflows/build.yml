@@ -7,7 +7,7 @@ on:
 permissions: {}
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     steps:
     - name: Harden runner
       uses: step-security/harden-runner@v2.10.4
@@ -28,13 +28,6 @@ jobs:
       with:
         # Commit corresponds to tag v0.30.0 and installs nix v2.24.0.
         source-revision: b4bc792f575248e63e92c95cd9d334d01ba86b71
-        # Disable telemetry.
-        diagnostic-endpoint: ""
-    - name: Setup cache
-      uses: DeterminateSystems/magic-nix-cache-action@v9
-      with:
-        # Commit does not correspond to a tag.
-        source-revision: 296e9dc1af825f2c961c1caa61832609b1bf8a49
         # Disable telemetry.
         diagnostic-endpoint: ""
     - name: Build
