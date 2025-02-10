@@ -52,7 +52,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload workflow report
-      uses: github/codeql-action/upload-sarif@v3.28.8
+      uses: github/codeql-action/upload-sarif@v3.28.9
       with:
         sarif_file: workflow_results.sarif
         category: zizmor
