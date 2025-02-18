@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-24.04-arm
     steps:
     - name: Harden runner
-      uses: step-security/harden-runner@v2.10.4
+      uses: step-security/harden-runner@v2.11.0
       with:
         egress-policy: block
         allowed-endpoints: >
