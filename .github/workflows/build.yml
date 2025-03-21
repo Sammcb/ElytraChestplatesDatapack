@@ -1,41 +1,52 @@
 name: Build
-on:
-  release:
-    types: [published]
-  pull_request: null
-  workflow_dispatch: null
+on: workflow_call
 permissions: {}
 jobs:
   build:
+    strategy:
+      matrix:
+        artifact:
+        - name: datapack
+          make-target: build-datapack
+          path-prefix: elytra-chestplates
+        - name: resourcepack
+          make-target: resource-pack
+          path-prefix: ElytraChestplates
     runs-on: ubuntu-24.04-arm
+    name: ${{ matrix.artifact.name }}
     steps:
-    - name: Harden runner
-      uses: step-security/harden-runner@v2.11.0
-      with:
-        egress-policy: block
-        allowed-endpoints: >
-          github.com:443
-          api.github.com:443
-          cache.nixos.org:443
-          install.determinate.systems:443
-          *.s3.dualstack.us-east-2.amazonaws.com:443
-    - name: Checkout repository
-      uses: actions/checkout@v4.2.2
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
         persist-credentials: false
-    - name: Install nix
-      uses: DeterminateSystems/nix-installer-action@v16
+    - uses: ./.github/actions/setup-nix
+    - name: Build ${{ matrix.artifact.name }}
+      run: nix develop .#build -c make ${{ matrix.artifact.make-target }}
+    - name: Upload ${{ matrix.artifact.name }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
       with:
-        # Commit corresponds to tag v0.30.0 and installs nix v2.24.0.
-        source-revision: b4bc792f575248e63e92c95cd9d334d01ba86b71
-        # Disable telemetry.
-        diagnostic-endpoint: ""
-    - name: Build
-      run: nix run .
-    - name: Archive executable
-      uses: actions/upload-artifact@v4.6.1
+        name: ${{ matrix.artifact.name }}
+        path: ${{ matrix.artifact.path-prefix }}.zip
+        include-hidden-files: true
+        if-no-files-found: error
+  checksums:
+    runs-on: ubuntu-24.04-arm
+    needs: build
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
-        name: ElytraChestplates
-        path: .build/*.zip
+        persist-credentials: false
+    - uses: ./.github/actions/setup-nix
+    - uses: actions/download-artifact@95815c38cf2ff2164869cbab79da8d1f422bc89e # v4.2.1
+      with:
+        merge-multiple: true
+        path: artifacts
+    - name: Generate artifact checksums
+      working-directory: artifacts
+      run: nix develop .#createChecksums -c sha256sum * >> ../checksums.txt
+    - name: Upload checksums
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      with:
+        name: checksums
+        path: checksums.txt
         include-hidden-files: true
         if-no-files-found: error
