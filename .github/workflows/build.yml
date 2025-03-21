@@ -10,7 +10,7 @@ jobs:
           make-target: build-datapack
           path-prefix: elytra-chestplates
         - name: resourcepack
-          make-target: resource-pack
+          make-target: build-resourcepack
           path-prefix: ElytraChestplates
     runs-on: ubuntu-24.04-arm
     name: ${{ matrix.artifact.name }}
