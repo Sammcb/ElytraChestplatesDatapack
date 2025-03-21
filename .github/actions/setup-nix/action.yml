@@ -1,0 +1,11 @@
+name: Setup nix
+description: Installs a specified version of nix
+runs:
+  using: composite
+  steps:
+  - uses: nixbuild/nix-quick-install-action@5bb6a3b3abe66fd09bbf250dce8ada94f856a703 # v30
+    with:
+      nix_version: 2.26.1
+  - uses: nix-community/cache-nix-action@c448f065ba14308da81de769632ca67a3ce67cf5 # v6
+    with:
+      primary-key: nix-${{ runner.os }}-${{ hashFiles('**/*.nix', '**/flake.lock') }}
