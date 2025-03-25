@@ -7,8 +7,8 @@
 		"id": "minecraft:iron_chestplate",
 		"components": {
 			"minecraft:lore": [
-				"{'text': 'Elytra:', 'italic': false, 'color': 'gray'}",
-				"{'text': ' Equipped', 'italic': false, 'color': 'light_purple'}"
+				{"text": "Elytra:", "italic": false, "color": "gray"},
+				{"text": " Equipped", "italic": false, "color": "light_purple"}
 			],
 			"minecraft:glider": {},
 			"minecraft:item_model": "elytrachestplates:elytra_iron_chestplate",
