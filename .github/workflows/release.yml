@@ -23,14 +23,14 @@ jobs:
       with:
         persist-credentials: false
     - uses: ./.github/actions/setup-nix
-    - uses: actions/download-artifact@95815c38cf2ff2164869cbab79da8d1f422bc89e # v4.2.1
+    - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
       with:
         merge-multiple: true
         path: artifacts
     - name: Sign checksums
       working-directory: artifacts
       run: nix develop .#sign -c cosign sign-blob -y checksums.txt --bundle checksums.txt.cosign.bundle
-    - uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517141b2 # v2.2.3
+    - uses: actions/attest-build-provenance@db473fddc028af60658334401dc6fa3ffd8669fd # v2.3.0
       with:
         subject-checksums: artifacts/checksums.txt
     - name: Attach artifacts to release ${{ github.event.release.tag_name }}
