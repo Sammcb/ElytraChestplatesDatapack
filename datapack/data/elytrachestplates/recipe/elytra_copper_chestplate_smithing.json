@@ -1,21 +1,21 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "#elytrachestplates:addition",
-	"base": "minecraft:golden_chestplate",
+	"base": "minecraft:copper_chestplate",
 	"result": {
 		"count": 1,
-		"id": "minecraft:golden_chestplate",
+		"id": "minecraft:copper_chestplate",
 		"components": {
 			"minecraft:lore": [
 				{ "text": "Elytra:", "italic": false, "color": "gray" },
 				{ "text": " Equipped", "italic": false, "color": "light_purple" }
 			],
 			"minecraft:glider": {},
-			"minecraft:item_model": "elytrachestplates:elytra_golden_chestplate",
+			"minecraft:item_model": "elytrachestplates:elytra_copper_chestplate",
 			"minecraft:equippable": {
 				"slot": "chest",
-				"equip_sound": "item.armor.equip_gold",
-				"asset_id": "elytrachestplates:elytra_golden_chestplate"
+				"equip_sound": "item.armor.equip_copper",
+				"asset_id": "elytrachestplates:elytra_copper_chestplate"
 			}
 		}
 	},
