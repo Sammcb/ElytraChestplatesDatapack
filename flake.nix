@@ -4,18 +4,18 @@
 	inputs = {
 		# Commit does not correspond to a tag.
 		# Updating to latest commit generally follows unstable branch.
-		nixpkgs.url = "github:NixOS/nixpkgs/7ac85b1997b87e8b545fcdabbadb68414193b844";
+		nixpkgs.url = "github:NixOS/nixpkgs/ac3f8faff5c1a4191489c7b2f006d9adf4797425";
 		# Commit does not correspond to a tag.
-		flake-parts.url = "github:hercules-ci/flake-parts/52a2caecc898d0b46b2b905f058ccc5081f842da";
+		flake-parts.url = "github:hercules-ci/flake-parts/2cccadc7357c0ba201788ae99c4dfa90728ef5e0";
 		flake-checker = {
-			# Commit corresponds to tag v0.2.8.
-			url = "github:DeterminateSystems/flake-checker/3ecd9ddd3cf1ce0f78447cb0e5b7d8ecb91ee778";
+			# Commit corresponds to tag v0.2.10.
+			url = "github:DeterminateSystems/flake-checker/9eecc66959dde5efc621cd7063538971177d303c";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
 
 	outputs = inputs@{self, nixpkgs, flake-parts, flake-checker}: flake-parts.lib.mkFlake {inherit inputs;} {
-		systems = ["aarch64-darwin" "aarch64-linux" "x86_64-linux" "x86_64-darwin"];
+		systems = ["aarch64-darwin" "aarch64-linux" "x86_64-linux"];
 		perSystem = {pkgs, system, ...}:
 			let
 				flakeCheckerPackage = flake-checker.packages.${system}.default;
