@@ -15,7 +15,7 @@
 	};
 
 	outputs = inputs@{self, nixpkgs, flake-parts, flake-checker}: flake-parts.lib.mkFlake {inherit inputs;} {
-		systems = ["aarch64-darwin" "aarch64-linux" "x86_64-linux" "x86_64-darwin"];
+		systems = ["aarch64-darwin" "aarch64-linux" "x86_64-linux"];
 		perSystem = {pkgs, system, ...}:
 			let
 				flakeCheckerPackage = flake-checker.packages.${system}.default;
