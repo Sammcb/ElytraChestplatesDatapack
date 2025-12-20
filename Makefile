@@ -1,5 +1,5 @@
 .PHONY: build build-datapack build-resourcepack clean lint
-.DEFAULT_GOAL: build
+.DEFAULT_GOAL := build
 
 DATAPACK_ZIP_NAME := elytra-chestplates.zip
 RESOURCEPACK_ZIP_NAME := ElytraChestplates.zip
