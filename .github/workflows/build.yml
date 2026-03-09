@@ -22,7 +22,7 @@ jobs:
     - name: Build ${{ matrix.artifact.name }}
       run: nix develop .#build -c make ${{ matrix.artifact.make-target }}
     - name: Upload ${{ matrix.artifact.name }}
-      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: ${{ matrix.artifact.name }}
         path: ${{ matrix.artifact.path-prefix }}.zip
@@ -36,7 +36,7 @@ jobs:
       with:
         persist-credentials: false
     - uses: ./.github/actions/setup-nix
-    - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+    - uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 # v8.0.0
       with:
         merge-multiple: true
         path: artifacts
@@ -44,7 +44,7 @@ jobs:
       working-directory: artifacts
       run: nix develop .#createChecksums -c sha256sum * >> ../checksums.txt
     - name: Upload checksums
-      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: checksums
         path: checksums.txt
