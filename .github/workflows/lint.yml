@@ -9,7 +9,7 @@ jobs:
       with:
         persist-credentials: false
     - uses: ./.github/actions/setup-nix
-    - uses: DeterminateSystems/flake-checker-action@de924abd783455e8429c858962b9e43062d19da1 # v13
+    - uses: DeterminateSystems/flake-checker-action@786422608c7bded2bbc9741ad9f91356842bf520 # v14
       with:
         send-statistics: false
         ignore-missing-flake-lock: false
@@ -46,7 +46,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload workflow report
-      uses: github/codeql-action/upload-sarif@5595ccaf912efad79be6eef63a5619ff05969be3 # v4.37.6
+      uses: github/codeql-action/upload-sarif@b96794f015dfd88f77b49b1c93e0fa7110f94c63 # v4.38.0
       with:
         sarif_file: workflow_results.sarif
         category: zizmor
