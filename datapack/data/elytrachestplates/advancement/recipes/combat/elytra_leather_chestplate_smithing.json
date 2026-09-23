@@ -14,13 +14,11 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "elytrachestplates:elytra_leather_chestplate_smithing"
+				"recipes": "elytrachestplates:elytra_leather_chestplate_smithing"
 			}
 		}
 	},
-	"requirements": [
-		["has_the_recipe", "has_elytra"]
-	],
+	"requirements": [["has_the_recipe", "has_elytra"]],
 	"rewards": {
 		"recipes": ["elytrachestplates:elytra_leather_chestplate_smithing"]
 	}
